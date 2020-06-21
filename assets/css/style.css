@@ -16,9 +16,15 @@ a:link {
 
 button {
 	background-color: var(--pretty-purple);
-	border: solid 2px var(--purple-border);
-	border-radius: 8px;
+	border: solid 1px var(--purple-border);
+	border-radius: 4px;
 	color: white;
+	padding: 4px 10px;
+}
+
+button.large {
+	border-radius: 8px;
+	border-width: 2px;
 	font-size: 26px;
 	margin-top: 20px;
 	padding: 8px 20px;
@@ -38,20 +44,14 @@ header div {
 	padding: 8px 20px;
 }
 
-div#buttonHolder {
+div#mainContent {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	margin-top: 40px;
-}
-
-div#testQuestion {
-	align-items: center;
-	display: none;
-	flex-direction: column;
 	height: 300px;
+	justify-content: center;
 	margin: 40px auto;
+	padding: 0px 40px;
 	position: relative;
 	width: 600px;
 }
@@ -63,13 +63,14 @@ div#answerStatus {
 	position: absolute;
 }
 
-div#testQuestion ol {
+div#mainContent ol {
 	list-style-position: inside;
 	margin-top: 20px;
+	padding: 0px 40px;
 }
 
 
-div#testQuestion li {
+div#mainContent li {
 	background-color: var(--pretty-purple);
 	border-radius: 4px;
 	color: white;
@@ -78,11 +79,17 @@ div#testQuestion li {
 	padding: 4px 8px;
 }
 
-div#testQuestion li:hover {
+div#mainContent li:hover {
 	background-color: var(--purple-hover);
 }
 
 div#timer {
 	font-size: 20px;
 	font-weight: bold;
+}
+
+@media screen and (max-width: 575px) {
+	div#mainContent {
+		width: 100%;
+	}
 }
