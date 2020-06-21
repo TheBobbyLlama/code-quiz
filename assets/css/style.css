@@ -1,0 +1,75 @@
+:root {
+	--pretty-purple: #6040a0;
+	--purple-border: #402080;
+	--purple-hover: #8060c0;
+}
+  
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+a:link {
+	color: var(--pretty-purple);
+}
+
+button {
+	background-color: var(--pretty-purple);
+	border: solid 2px var(--purple-border);
+	border-radius: 8px;
+	color: white;
+	font-size: 26px;
+	padding: 8px 20px;
+}
+
+button:hover {
+	background-color: var(--purple-hover);
+	border-color: var(--pretty-purple);
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+}
+
+header div {
+	padding: 8px 20px;
+}
+
+div#buttonHolder {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 40px;
+}
+
+div#testQuestion {
+	align-items: center;
+	display: none;
+	flex-direction: column;
+	margin-top: 40px;
+}
+
+div#testQuestion ol {
+	list-style-position: inside;
+	margin-top: 20px;
+}
+
+
+div#testQuestion li {
+	background-color: var(--pretty-purple);
+	border-radius: 4px;
+	color: white;
+	margin: 4px;
+	padding: 4px 8px;
+}
+
+div#testQuestion li:hover {
+	background-color: var(--purple-hover);
+}
+
+div#timer {
+	font-size: 20px;
+	font-weight: bold;
+}
