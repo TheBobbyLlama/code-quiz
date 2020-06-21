@@ -94,13 +94,101 @@ var beginTest = function() {
 
 var endTest = function() {
 	clearInterval(timer);
-	showGameOver();
+
+	if (timeLeft > 0)
+		showGameOver();
+	else
+		showResetOptions();
 }
 
 var showGameOver = function() {
 	var createMe;
+	var createChild;
 
 	contentEl.innerHTML = "";
+
+	/* ----- Add Header ----- */
+	createMe = document.createElement("h2");
+	createMe.textContent = "You got a score of " + timeLeft + "!";
+	contentEl.appendChild(createMe);
+
+	/* ----- Add Congrats Text ----- */
+	createMe = document.createElement("p");
+	createMe.textContent = "Congratulations!  Please enter your name/initials!";
+	contentEl.appendChild(createMe);
+
+	/* ----- Add High Score Entry ----- */
+	createMe = document.createElement("div");
+	createMe.className = "results";
+		/* ----- Add Text Entry ----- */
+		createChild = document.createElement("input");
+		createChild.setAttribute("type", "text");
+		createChild.setAttribute("id", "HSname");
+		createMe.appendChild(createChild);
+		/* ----- Add Confirm Button ----- */
+		createChild = document.createElement("button");
+		createChild.setAttribute("type", "button");
+		createChild.addEventListener("click", submitHighScore);
+		createChild.textContent = "Submit";
+		createMe.appendChild(createChild);
+	contentEl.appendChild(createMe);
+}
+
+var submitHighScore = function() {
+	var myName = contentEl.querySelector("#HSname").value;
+
+	if (myName) {
+		var highScores = localStorage.getItem("highScores");
+
+		if (highScores)
+			highScores = JSON.parse(highScores);
+		else
+			highScores = [];
+
+		highScores.push({ name: myName, score: timeLeft });
+
+		localStorage.setItem("highScores", JSON.stringify(highScores));
+
+		showResetOptions();
+	}
+}
+
+var showResetOptions = function() {
+	contentEl.innerHTML = "";
+
+	var createMe;
+	var createChild;
+
+	contentEl.innerHTML = "";
+
+	/* ----- Add Header ----- */
+	createMe = document.createElement("h2");
+	createMe.textContent = "You got a score of " + timeLeft + "!";
+	contentEl.appendChild(createMe);
+
+	/* ----- Add High Score Entry ----- */
+	createMe = document.createElement("div");
+	createMe.className = "results";
+		/* ----- Add Go Back Button ----- */
+		createChild = document.createElement("button");
+		createChild.setAttribute("type", "button");
+		createChild.textContent = "Go Back";
+		createChild.addEventListener("click", resetPage);
+		createMe.appendChild(createChild);
+		/* ----- Add Clear High Scores Button ----- */
+		createChild = document.createElement("button");
+		createChild.setAttribute("id", "clear");
+		createChild.setAttribute("type", "button");
+		createChild.textContent = "Clear High Scores";
+		createChild.addEventListener("click", clearHighScores);
+		createMe.appendChild(createChild);
+	contentEl.appendChild(createMe);
+}
+
+var clearHighScores = function(event) {
+	localStorage.removeItem("highScores");
+	event.target.disabled = true;
+	event.target.removeEventListener("click", clearHighScores);
 }
 
 var resetPage = function() {

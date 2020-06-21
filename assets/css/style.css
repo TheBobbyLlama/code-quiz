@@ -35,6 +35,11 @@ button:hover {
 	border-color: var(--pretty-purple);
 }
 
+button[disabled], button[disabled]:hover {
+	background-color: #9080a0;
+	border-color: #706080;
+}
+
 header {
 	display: flex;
 	justify-content: space-between;
@@ -83,9 +88,24 @@ div#mainContent li:hover {
 	background-color: var(--purple-hover);
 }
 
+div#mainContent p {
+	margin-top: 10px;
+}
+
 div#timer {
 	font-size: 20px;
 	font-weight: bold;
+}
+
+.results {
+	display: flex;
+	justify-content: center;
+	margin-top: 8px;
+	width: 100%;
+}
+
+.results * + * {
+	margin-left: 4px;
 }
 
 @media screen and (max-width: 575px) {
