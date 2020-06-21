@@ -20,6 +20,7 @@ button {
 	border-radius: 8px;
 	color: white;
 	font-size: 26px;
+	margin-top: 20px;
 	padding: 8px 20px;
 }
 
@@ -40,6 +41,7 @@ header div {
 div#buttonHolder {
 	align-items: center;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	margin-top: 40px;
 }
@@ -48,7 +50,17 @@ div#testQuestion {
 	align-items: center;
 	display: none;
 	flex-direction: column;
-	margin-top: 40px;
+	height: 300px;
+	margin: 40px auto;
+	position: relative;
+	width: 600px;
+}
+
+div#answerStatus {
+	bottom: 0px;
+	font-size: 20px;
+	font-style: italic;
+	position: absolute;
 }
 
 div#testQuestion ol {
@@ -61,6 +73,7 @@ div#testQuestion li {
 	background-color: var(--pretty-purple);
 	border-radius: 4px;
 	color: white;
+	cursor: pointer;
 	margin: 4px;
 	padding: 4px 8px;
 }
