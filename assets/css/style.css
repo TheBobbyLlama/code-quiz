@@ -63,13 +63,6 @@ div#mainContent, div#highScores {
 	width: 600px;
 }
 
-div#answerStatus {
-	bottom: 0px;
-	font-size: 20px;
-	font-style: italic;
-	position: absolute;
-}
-
 div#mainContent ol {
 	list-style-position: inside;
 	margin-top: 20px;
@@ -92,6 +85,17 @@ div#mainContent li:hover {
 
 div#mainContent p {
 	margin-top: 10px;
+}
+
+div#answerStatus {
+	border-top: solid 2px gray;
+	bottom: 0px;
+	color: gray;
+	font-size: 20px;
+	font-style: italic;
+	position: absolute;
+	text-align: center;
+	width: 100%;
 }
 
 div#highScores ol {
