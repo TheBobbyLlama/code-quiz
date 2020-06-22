@@ -52,7 +52,7 @@ var quizList = [
 	{
 		question: "We often use the acronym 'DRY' as a best practice.  What does this mean?",
 		choices: [ "Don't Rush Yourself", "Divide, Refactor, Yield", "Don't Repeat Yourself", "Dummies Really Yeet" ],
-		correct: 3
+		correct: 2
 	},
 	{
 		question: "What is code {enclosed in curly braces} known as?",

@@ -49,7 +49,7 @@ header div {
 	padding: 8px 20px;
 }
 
-div#mainContent {
+div#mainContent, div#highScores {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
@@ -90,6 +90,14 @@ div#mainContent li:hover {
 
 div#mainContent p {
 	margin-top: 10px;
+}
+
+div#highScores ol {
+	margin-top: 12px;
+}
+
+div#highScores li > * {
+	display: inline-block;
 }
 
 div#timer {
