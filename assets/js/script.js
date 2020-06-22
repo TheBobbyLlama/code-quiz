@@ -183,7 +183,7 @@ var showResetOptions = function() {
 		if (localStorage.getItem("highScores"))
 			createChild.addEventListener("click", clearHighScores);
 		else
-			createChild.setAttribute("disabled", null);
+			createChild.setAttribute("disabled", "");
 		createMe.appendChild(createChild);
 	contentEl.appendChild(createMe);
 }
