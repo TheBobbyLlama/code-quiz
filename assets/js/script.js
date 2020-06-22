@@ -180,7 +180,10 @@ var showResetOptions = function() {
 		createChild.setAttribute("id", "clear");
 		createChild.setAttribute("type", "button");
 		createChild.textContent = "Clear High Scores";
-		createChild.addEventListener("click", clearHighScores);
+		if (localStorage.getItem("highScores"))
+			createChild.addEventListener("click", clearHighScores);
+		else
+			createChild.setAttribute("disabled", null);
 		createMe.appendChild(createChild);
 	contentEl.appendChild(createMe);
 }

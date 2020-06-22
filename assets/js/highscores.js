@@ -24,7 +24,7 @@ var showHighScores = function() {
 };
 
 var getHighestScore = function(scores) {
-	if (!scores)
+	if ((!scores) || (!scores.length))
 		return null;
 
 	var highestScore = scores[0].score;
