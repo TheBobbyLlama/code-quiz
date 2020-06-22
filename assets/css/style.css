@@ -19,6 +19,7 @@ button {
 	border: solid 1px var(--purple-border);
 	border-radius: 4px;
 	color: white;
+	cursor: pointer;
 	padding: 4px 10px;
 }
 
@@ -38,6 +39,7 @@ button:hover {
 button[disabled], button[disabled]:hover {
 	background-color: #9080a0;
 	border-color: #706080;
+	cursor: default;
 }
 
 header {
@@ -53,7 +55,7 @@ div#mainContent, div#highScores {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	height: 300px;
+	height: 360px;
 	justify-content: center;
 	margin: 40px auto;
 	padding: 0px 40px;
@@ -117,7 +119,7 @@ div#timer {
 }
 
 @media screen and (max-width: 575px) {
-	div#mainContent {
+	div#mainContent, div#highScores {
 		width: 100%;
 	}
 }
